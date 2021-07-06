@@ -256,7 +256,127 @@ optional arguments:
   -h, --help            show this help message and exit
 
 ```
+### gsql terminal 
+
+this function launches a gsql terminal ( Pure Python )
+
+```SHELL
+user@box $ tg box gsql -alias <your_box_alias>
+Welcome to tigergraph
+GSQL > 
+```
+
+```
+usage: tg box gsql [-h] [-alias ALIAS] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]]
+
+optional arguments:
+  -h, --help          show this help message and exit
+  -alias ALIAS        tigergraph Box to use
+  -user USER          tigergraph user ( default : tigergraph )
+  -password PASSWORD  tigergraph password ( default : tigergraph )
+  -host [HOST]        tigergraph host ( default : http://127.0.0.1)
+  -gsPort [GSPORT]    GSQL Port ( default : 14240 )
+
+```
+
+### udf download/upload 
+
+download upload UDF 
+
+```SHELL
+user@box $ tg box udf -alias <your_box_alias> -ops download
+user@box $ tg box udf -alias <your_box_alias> -ops upload
+```
+full usage :
+```
+usage: tg box udf [-h] [-alias ALIAS] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]]
+                  [-ops {download,upload}]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -alias ALIAS          tigergraph Box to use
+  -user USER            tigergraph user ( default : tigergraph )
+  -password PASSWORD    tigergraph password ( default : tigergraph )
+  -host [HOST]          tigergraph host ( default : http://127.0.0.1)
+  -gsPort [GSPORT]      GSQL Port ( default : 14240 )
+  -ops {download,upload}
+                        upload/download UDF ( default : download )
+
+```
+
+### udt download/upload 
+
+download/upload UDT
+
+```SHELL
+user@box $ tg box udt -alias <your_box_alias> -ops download
+user@box $ tg box udt -alias <your_box_alias> -ops upload
+```
+full usage : 
+
+```
+usage: tg box udt [-h] [-alias ALIAS] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]]
+                  [-ops {download,upload}]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -alias ALIAS          tigergraph Box to use
+  -user USER            tigergraph user ( default : tigergraph )
+  -password PASSWORD    tigergraph password ( default : tigergraph )
+  -host [HOST]          tigergraph host ( default : http://127.0.0.1 )
+  -gsPort [GSPORT]      GSQL Port ( default : 14240 )
+  -ops {download,upload}
+                        upload/download UDT ( default : download )
+```
+
+### Manage GPE/GSE/RESTPP Services
+
+start/stop GPE/GSE/RESTPP
+
+```SHELL
+user@box $ tg box services -alias <your_box_alias> -ops start
+user@box $ tg box services -alias <your_box_alias> -ops stop
+```
+
+full usage :
+
+```
+usage: tg box services [-h] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]] [-ops {start,stop}]
+
+optional arguments:
+  -h, --help          show this help message and exit
+  -user USER          tigergraph user ( default : tigergraph )
+  -password PASSWORD  tigergraph password ( default : tigergraph )
+  -host [HOST]        tigergraph host ( default : http://127.0.0.1 )
+  -gsPort [GSPORT]    GSQL Port ( default : 14240 )
+  -ops {start,stop}   start/stop GPE/GSE/RESTPP ( default : start )
+```
+
+
+### backup a TigerGraph Instance ( Full , Data , Schema )
+
+Backup a tigergraph instance 
+
+```SHELL
+user@box $ tg box backup -alias <your_box_alias> 
+```
+
+full usage :
+```
+usage: tg box backup [-h] [-alias ALIAS] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]]
+                     [-restPort [RESTPORT]] [-t {ALL,SCHEMA,DATA}]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -alias ALIAS          tigergraph Box to use
+  -user USER            tigergraph user ( default : tigergraph )
+  -password PASSWORD    tigergraph password ( default : tigergraph )
+  -host [HOST]          tigergraph host ( default : http://127.0.0.1 )
+  -gsPort [GSPORT]      GSQL Port ( default : 14240 )
+  -restPort [RESTPORT]  Rest Port ( default : 9000 )
+  -t {ALL,SCHEMA,DATA}  backup Mode ( default : ALL )
+```
 
 ### Demos , Algos , Starter-Kit , Import ( Pending - Work in progress )
 
-:construction: these functionnalities are pending release 
+:construction: these functionnalities are pending release (work in progress).
