@@ -7,26 +7,26 @@ At a high level, these areas make up the `tgcli` project:
 
 ## Installation 
 
-- Mac OS :
+### Mac OS:
 To install TigerGraph Cli on Mac OS
 ```
 brew tap TigerGraph-DevLabs/tg
 brew install tgcli
 ```
 
-- Linux :
-to install TigerGraph Cli on Linux 
+### Linux:
+To install TigerGraph Cli on Linux 
 
 ```SHELL
 user@box $ wget https://tigertool.tigergraph.com/dl/linux/tgcli
 user@box $ sudo mv tgcli /usr/bin/
 user@box $ sudo chmod +x /usr/bin/tgcli
 ```
-or using snapcraft 
+Or, using snapcraft 
 ```
 snap install tgcli
 ```
-- windows :
+### Windows:
 
 ```
 https://tigertool.tigergraph.com/dl/windows/tgcli.exe
@@ -38,7 +38,7 @@ Running `tg <module> -h` displays help text for a topic.
 
 Example : `tg cloud -h` 
 
-In this case, we are getting the cloud's command help 
+In this case, we are getting the cloud's command help. 
 
 ```
 usage: tg cloud [-h] {login,start,stop,terminate,archive,list,create} ...
@@ -98,7 +98,7 @@ tg conf tgcloud -email <mail@domain.com> -password <password>
 
 `tg conf list -h` lists all the configuration 
  
- Example :
+ Example:
  ```
 =======    tgCloud Account  ======
 username: myaccount@gmail.com
@@ -193,12 +193,12 @@ optional arguments:
 
 ```
 
-### cloud login
+### Cloud login
 
 
 ### List tgcloud instances 
 
-to list tgcloud Instances use :
+To list tgcloud instances use:
 
 ```
 tg cloud list 
@@ -223,7 +223,7 @@ optional arguments:
 
 ### Start/Stop/Terminate/Archive a tgcloud Machine 
 
-To change the state of a machine on tgcloud use :
+To change the state of a machine on tgcloud use:
 
 ```
 tg cloud start -id <machine-id-from-list>
@@ -258,7 +258,7 @@ optional arguments:
 ```
 ### gsql terminal 
 
-this function launches a gsql terminal ( Pure Python )
+This function launches a gsql terminal ( Pure Python )
 
 ```SHELL
 user@box $ tg box gsql -alias <your_box_alias>
@@ -279,15 +279,15 @@ optional arguments:
 
 ```
 
-### udf download/upload 
+### UDF Download/Upload 
 
-download upload UDF 
+Download/Upload UDF 
 
 ```SHELL
 user@box $ tg box udf -alias <your_box_alias> -ops download
 user@box $ tg box udf -alias <your_box_alias> -ops upload
 ```
-full usage :
+Full usage:
 ```
 usage: tg box udf [-h] [-alias ALIAS] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]]
                   [-ops {download,upload}]
@@ -304,15 +304,15 @@ optional arguments:
 
 ```
 
-### udt download/upload 
+### UDT Download/Upload 
 
-download/upload UDT
+Download/Upload UDT
 
 ```SHELL
 user@box $ tg box udt -alias <your_box_alias> -ops download
 user@box $ tg box udt -alias <your_box_alias> -ops upload
 ```
-full usage : 
+Full usage: 
 
 ```
 usage: tg box udt [-h] [-alias ALIAS] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]]
@@ -338,7 +338,7 @@ user@box $ tg box services -alias <your_box_alias> -ops start
 user@box $ tg box services -alias <your_box_alias> -ops stop
 ```
 
-full usage :
+Full usage:
 
 ```
 usage: tg box services [-h] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]] [-ops {start,stop}]
@@ -361,7 +361,7 @@ Backup a tigergraph instance
 user@box $ tg box backup -alias <your_box_alias> 
 ```
 
-full usage :
+Full usage:
 ```
 usage: tg box backup [-h] [-alias ALIAS] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]]
                      [-restPort [RESTPORT]] [-t {ALL,SCHEMA,DATA}]
