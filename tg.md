@@ -170,7 +170,7 @@ optional arguments:
 | -alias | The machine's alias to delete | string  | "" |
 
 
-## Cloud Functionnalities
+## Cloud Functionalities
 
 
 `tg cloud -h` Use this command to manage TigerGraph Cloud instances state.
@@ -232,7 +232,7 @@ tg cloud terminate -id <machine-id-from-list>
 tg cloud archive -id <machine-id-from-list>
 ```
 
-## Box Functionnalities
+## Box Functionalities
 
 
 `tg box -h` Use this command to manage TigerGraph Instances.
@@ -379,4 +379,4 @@ optional arguments:
 
 ### Demos , Algos , Starter-Kit , Import ( Pending - Work in progress )
 
-:construction: these functionnalities are pending release (work in progress).
+:construction: these functionalities are pending release (work in progress).
