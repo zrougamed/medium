@@ -150,7 +150,7 @@ optional arguments:
 | -default | y/n parameter to set this configuration as default box | string  | n |
 
 
-### Delete a Machine/Box 
+### Delete a Machine/Box From Configuration
 
 `tg conf delete -h` add a machine to the configuration store
 
@@ -231,3 +231,32 @@ tg cloud stop -id <machine-id-from-list>
 tg cloud terminate -id <machine-id-from-list>
 tg cloud archive -id <machine-id-from-list>
 ```
+
+## Box Functionnalities
+
+
+`tg box -h` Use this command to manage TigerGraph Instances.
+
+```
+usage: tg box [-h] {demos,algos,gsql,udf,udt,services,backup,import,starter-kit} ...
+
+positional arguments:
+  {demos,algos,gsql,udf,udt,services,backup,import,starter-kit}
+    demos               Loads demos to TigerGraph box.
+    algos               Loads algos to TigerGraph box.
+    gsql                Execute a gsql terminal.
+    udf                 get/update UDF for TigerGraph box.
+    udt                 get/update UDT for TigerGraph box.
+    services            Start/Stop GPE/GSE/RESTPP Services in TigerGraph box.
+    backup              Backup a TigerGraph box.
+    import              Import a TigerGraph box from a ZIP file.
+    starter-kit         Load a starter kit to TigerGraph box
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+```
+
+### Demos , Algos , Starter-Kit , Import ( Pending - Work in progress )
+
+:construction: these functionnalities are pending release 
