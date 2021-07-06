@@ -54,7 +54,7 @@ optional arguments:
 
 ### tgcloud account 
 
-`tg cloud tgcloud -h` manages the tgcloud account credentials ( used by `tg cloud login`)
+`tg conf tgcloud -h` manages the tgcloud account credentials ( used by `tg cloud login`)
 
 | argument | description | accepted values | default |
 | -------- | ----------- | --------------- | ------- |
@@ -69,7 +69,7 @@ tg conf tgcloud -email <mail@domain.com> -password <password>
 
 ### Machines ( refered to as box ) Configuration list
 
-`tg cloud list -h` lists all the configuration 
+`tg conf list -h` lists all the configuration 
  
  Example :
  ```
@@ -91,5 +91,34 @@ Machine: alias = Machine2
  REST Port: 9000
  ```
  
+### Add a Machine/Box 
 
- 
+`tg conf add -h` add a machine to the configuration store
+
+```
+usage: tg conf add [-h] [-alias ALIAS] [-user USER] [-password PASSWORD] [-host [HOST]] [-gsPort [GSPORT]]
+                   [-restPort [RESTPORT]] [-default [{y,n}]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -alias ALIAS          the name used for referring to the tigergraph Box
+  -user USER            tigergraph user ( default : tigergraph )
+  -password PASSWORD    tigergraph password ( default : tigergraph )
+  -host [HOST]          tigergraph host ( default : http://127.0.0.1 )
+  -gsPort [GSPORT]      GSQL Port ( default : 14240 )
+  -restPort [RESTPORT]  Rest++ Port ( default : 9000 )
+  -default [{y,n}]      Set default alias conf (y/n) ( default : n )
+
+```
+
+
+| argument | description | accepted values | default |
+| -------- | ----------- | --------------- | ------- |
+| -alias | The name given to the box for using it later | string  | "" |
+| -user | tigergraph user by defaulttigergraph  | string  | tigergraph |
+| -password | tigergraph user's password  | string  | tigergraph |
+| -host | host value for tigergraph  | string  | http://127.0.0.1 |
+| -gsPort | GSQL Port for tigergraph instance | string  | 14240 |
+| -restPort | RestPP Port for tigergraph instance | string  | 9000 |
+| -default | y/n parameter to set this configuration as default box | string  | n |
+
