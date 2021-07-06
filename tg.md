@@ -5,6 +5,33 @@ At a high level, these areas make up the `tgcli` project:
 - [`cloud`] - Cloud Manager
 - [`box`] - TigerGraph Instance Manager
 
+## Installation 
+
+- Mac OS :
+To install TigerGraph Cli on Mac OS
+```
+brew tap TigerGraph-DevLabs/tg
+brew install tgcli
+```
+
+- Linux :
+to install TigerGraph Cli on Linux 
+
+```SHELL
+user@box $ wget https://tigertool.tigergraph.com/dl/linux/tgcli
+user@box $ sudo mv tgcli /usr/bin/
+user@box $ sudo chmod +x /usr/bin/tgcli
+```
+or using snapcraft 
+```
+snap install tgcli
+```
+- windows :
+
+```
+https://tigertool.tigergraph.com/dl/windows/tgcli.exe
+```
+
 ## Command-line help text
 
 Running `tg <module> -h` displays help text for a topic. 
@@ -122,3 +149,85 @@ optional arguments:
 | -restPort | RestPP Port for tigergraph instance | string  | 9000 |
 | -default | y/n parameter to set this configuration as default box | string  | n |
 
+
+### Delete a Machine/Box 
+
+`tg conf delete -h` add a machine to the configuration store
+
+```
+usage: tg conf delete [-h] [-alias ALIAS]
+
+optional arguments:
+  -h, --help    show this help message and exit
+  -alias ALIAS  the name used for referring to the tigergraph Box
+
+
+```
+
+
+| argument | description | accepted values | default |
+| -------- | ----------- | --------------- | ------- |
+| -alias | The machine's alias to delete | string  | "" |
+
+
+## Cloud Functionnalities
+
+
+`tg cloud -h` Use this command to manage TigerGraph Cloud instances state.
+
+```
+usage: tg cloud [-h] {login,start,stop,terminate,archive,list,create} ...
+
+positional arguments:
+  {login,start,stop,terminate,archive,list,create}
+    login               Login to tgcloud.io
+    start               Start a tgcloud instance
+    stop                Stop a tgcloud instance
+    terminate           Terminate a tgcloud instance
+    archive             Archive a tgcloud instance
+    list                List all tgcloud instance
+    create              Create a tgcloud instance
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+```
+
+### cloud login
+
+
+### List tgcloud instances 
+
+to list tgcloud Instances use :
+
+```
+tg cloud list 
+```
+
+```
+usage: tg cloud list [-h] [-activeonly [{y,n}]] [-o [{stdout,json}]]
+
+optional arguments:
+  -h, --help           show this help message and exit
+  -activeonly [{y,n}]  Hide terminated Boxes
+  -o [{stdout,json}]   Output for the tigergraph-cli
+
+```
+
+| argument | description | accepted values | default |
+| -------- | ----------- | --------------- | ------- |
+| -activeonly | list only active instances ( no terminated ) | string  | "y" |
+| -o | output mode stdout or json | string  | "stdout" |
+
+
+
+### Start/Stop/Terminate/Archive a tgcloud Machine 
+
+To change the state of a machine on tgcloud use :
+
+```
+tg cloud start -id <machine-id-from-list>
+tg cloud stop -id <machine-id-from-list>
+tg cloud terminate -id <machine-id-from-list>
+tg cloud archive -id <machine-id-from-list>
+```
