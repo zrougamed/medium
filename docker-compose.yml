@@ -1,7 +1,8 @@
+# This configuration file is for the **development** setup.
+# For a production example please refer to getredash/setup repository on GitHub.
 version: "2.2"
 x-redash-service: &redash-service
-   image: zrouga/tgdash  
-
+  image: zrouga/tgdash
 x-redash-environment: &redash-environment
   REDASH_LOG_LEVEL: "INFO"
   REDASH_REDIS_URL: "redis://redis:6379/0"
@@ -10,6 +11,7 @@ x-redash-environment: &redash-environment
   REDASH_MAIL_DEFAULT_SENDER: "redash@example.com"
   REDASH_MAIL_SERVER: "email"
   REDASH_ENFORCE_CSRF: "true"
+  EXTERNAL_IP: "http://127.0.0.1"
 services:
   server:
     <<: *redash-service
@@ -57,3 +59,10 @@ services:
     ports:
       - "1080:80"
     restart: unless-stopped
+  tigerflow:
+    image: graphflow/tigerflow
+    ports:
+      - 1880:1880
+    volumes:
+      - ~/tigerflow-data:/data
+
